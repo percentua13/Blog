@@ -3,27 +3,19 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
+
+
 <body>
+  <%= render "basic/header" %>
 
-
-<div class="wrapper">
-  <div class="title">
-    <h1>Live blog with Ruby</h1>
-  </div>
-
-  <div class="posts" id="post_section">
-    <% @posts.each do |post| %>
-      <div class="post-card">
-        <img class="image" src="<%= post.media %>">
-        <div class="body-trunc">
-          <p><%= post.body %></p>
-          <p><%= time_ago_in_words(post.dateTime) + " ago"%></p>
-        </div>
+    <div class="wrapper">
+      <div class="title">
+        <h1>Home page</h1>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
 
 
+
+    <%= render "basic/footer" %>
 </body>
 </html>
