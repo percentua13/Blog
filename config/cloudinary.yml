@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: doxgbchiu
+  api_key: '566547693575251'
+  api_secret: U9cLi-1AoXp6jzJPSb16CPQ00RA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: doxgbchiu
+  api_key: '566547693575251'
+  api_secret: U9cLi-1AoXp6jzJPSb16CPQ00RA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: doxgbchiu
+  api_key: '566547693575251'
+  api_secret: U9cLi-1AoXp6jzJPSb16CPQ00RA
+  enhance_image_tag: true
+  static_file_support: false
