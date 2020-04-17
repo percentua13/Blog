@@ -5,94 +5,98 @@
 </head>
 
 <body>
+    <div id="page-container">
+      <div id="content-wrap">
+            <%= render "basic/header" %>
 
-<%= render "basic/header" %>
+            <div class="wrapper">
+              <div class="title">
+                <h1>Live blog with Ruby</h1>
+              </div>
+              <div class="posts " id="post_section">
+                <div class="card" style="width: 25rem;">
+                  <div class="card-body">
+                    <a href="#" target="_blank">
+                      <img class="card-img-top" style="width: 100%; height: 300pt;" src="<%= @post.media %>">
+                    </a>
+                    <div class="body-trunc">
+                      <p><%= @post.body %></p>
 
-<div class="wrapper">
-  <div class="title">
-    <h1>Live blog with Ruby</h1>
-  </div>
-  <div class="posts " id="post_section">
-    <div class="card" style="width: 25rem;">
-      <div class="card-body">
-        <a href="#" target="_blank">
-          <img class="card-img-top" style="width: 100%; height: 300pt;" src="<%= @post.media %>">
-        </a>
-        <div class="body-trunc">
-          <p><%= @post.body %></p>
+                      <p><%= time_ago_in_words(@post.dateTime) + " ago"%></p>
 
-          <p><%= time_ago_in_words(@post.dateTime) + " ago"%></p>
-
-          <p style="text-align: right;">by <%= @post.author.name %></p>
-        </div>
+                      <p style="text-align: right;">by <%= @post.author.name %></p>
+                    </div>
 
 
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="display-4" style="text-align:center; color:white; margin-bottom:20px; margin-top:20px;">User comments</div>
+                </div><!-- /col-sm-12 -->
+              </div>
+              <div class="row">
+
+
+
+            <!-- start -->
+                <% @comments.each do |comment| %>
+                <div class="col-sm-1">
+                <div class="thumbnail">
+                  <img class="img-responsive user-photo" src="<%= comment.author.media%>">
+                </div><!-- /thumbnail -->
+              </div>
+
+
+                <div class="col-sm-5">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <span> <strong><%= comment.author.name%></strong> </span>
+                    <span  style="float: right;"> <strong><%= time_ago_in_words(comment.dateTime) + " ago"%></strong> </span>
+
+                  </div>
+                  <div class="panel-body">
+                    <%= comment.body%>
+                  </div><!-- /panel-body -->
+                </div><!-- /panel panel-default -->
+              </div><!-- /col-sm-5 -->
+
+                <% end %>
+                <!-- end-->
+
+                </div></div>
+
+
+            <% if (session[:user_id] !=nil) %>
+                <div style="text-align:center">
+
+                  <form method="POST" action="<%= '/comment/store/'+@post.id.to_s %>" enctype="multipart/form-data" class="post-form">
+                    <%= token_tag %>
+
+                    <strong>Leave your comment</strong>
+
+                    <div class="form-group">
+                      <label for="body"></label>
+                      <textarea name="body" class="form-control" cols="10" rows="5" style =" resize: none;"></textarea>
+                    </div>
+
+                    <div class="from-group">
+                      <div><input type="submit" value="Create Comment"></div>
+                    </div>
+
+                  </form>
+
+                </div>
+            <% end %>
       </div>
+
+    <%= render "basic/footer" %>
     </div>
-  </div>
-</div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="display-4" style="text-align:center; color:white; margin-bottom:20px; margin-top:20px;">User comments</div>
-    </div><!-- /col-sm-12 -->
-  </div>
-  <div class="row">
-
-
-
-<!-- start -->
-    <% @comments.each do |comment| %>
-    <div class="col-sm-1">
-    <div class="thumbnail">
-      <img class="img-responsive user-photo" src="<%= comment.author.media%>">
-    </div><!-- /thumbnail -->
-  </div>
-
-
-    <div class="col-sm-5">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <strong><%= comment.author.name%></strong> </span>
-      </div>
-      <div class="panel-body">
-        <%= comment.body%>
-      </div><!-- /panel-body -->
-    </div><!-- /panel panel-default -->
-  </div><!-- /col-sm-5 -->
-
-    <% end %>
-    <!-- end-->
-
-    </div></div>
-
-
-<% if (session[:user_id] !=nil) %>
-    <div style="text-align:center">
-
-      <form method="POST" action="<%= '/comment/store/'+@post.id.to_s %>" enctype="multipart/form-data" class="post-form">
-        <%= token_tag %>
-
-
-        <div class="form-group">
-          <label for="body"></label>
-          <textarea name="body" class="form-control" cols="10" rows="5" style =" resize: none;"></textarea>
-        </div>
-
-        <div class="from-group">
-          <div><input type="submit" value="Create Comment"></div>
-        </div>
-
-      </form>
-
-    </div>
-<% end %>
-
-
-
-
-<%= render "basic/footer" %>
 </body>
 </html>

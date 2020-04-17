@@ -1,0 +1,27 @@
+*{
+  font-family: "Comic Sans MS";
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  min-height: 100vh;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: aqua;
+  text-decoration: none;
+  color: black;
+  }
+a:hover{
+  text-decoration: none;
+  color: crimson;
+}

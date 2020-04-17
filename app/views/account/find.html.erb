@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+  <div id="page-container">
+    <div id="content-wrap">
+    <%= render "basic/header" %>
+
+    <div class="wrapper">
+        <div class="title">
+          <h1>Live blog with Ruby!!!!!!!!</h1>
+        </div>
+
+
+        <div style="text-align: center;" >
+          <strong>Results</strong>
+        </div>
+        <div class="posts " id="post_section" style="text-align: center;">
+
+          <% @users.each do |user| %>
+
+
+              <div class="row" style="width: 100%; margin-bottom: 30px;" >
+
+                <div class="col-md-4">
+                </div>
+                  <div class="col-md-2">
+                      <div class="profile-img" style="height: 100px; width: 200px;">
+                          <img src="<%= user.media %>" alt=""/>
+                      </div>
+                  </div>
+
+                  <div class="col-md-2" style="margin-top: 30px;">
+                    <a href="<%='/account/info/'+user.id.to_s %>"><%= user.name + " " + user.surname %></a>
+                  </div>
+
+                <div class="col-md-1" style="margin-top: 30px;">
+                  <a href="<%='/account/info/'+user.id.to_s %>"><%= user.username %></a>
+                </div>
+
+              </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render "basic/footer" %>
+  </div>
+
+</body>
+
+</html>
