@@ -11,7 +11,7 @@
 
             <div class="wrapper">
               <div class="title">
-                <h1>Live blog with Ruby</h1>
+
               </div>
               <div class="posts " id="post_section">
                 <div class="card" style="width: 25rem;">
@@ -24,7 +24,13 @@
 
                       <p><%= time_ago_in_words(@post.dateTime) + " ago"%></p>
 
-                      <p style="text-align: right;">by <%= @post.author.name %></p>
+
+
+
+                      <% @post.post2tags.each do |tag| %>
+                        <a href="<%='/posts/tag/'+tag.tag_id.to_s[1..tag.tag_id.to_s.size]%>"><%=tag.tag_id%></a>
+                      <%end %>
+
                     </div>
 
 
@@ -59,10 +65,16 @@
                     <span> <strong><%= comment.author.name%></strong> </span>
                     <span  style="float: right;"> <strong><%= time_ago_in_words(comment.dateTime) + " ago"%></strong> </span>
 
+
                   </div>
                   <div class="panel-body">
                     <%= comment.body%>
-                  </div><!-- /panel-body -->
+
+                  </div>
+
+
+
+                  <!-- /panel-body -->
                 </div><!-- /panel panel-default -->
               </div><!-- /col-sm-5 -->
 

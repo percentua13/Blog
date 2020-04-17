@@ -25,6 +25,11 @@ gem 'pusher'
 gem 'bcrypt-ruby'
 
 gem 'bootstrap'
+
+
+gem 'devise'
+gem 'devise-encryptable'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

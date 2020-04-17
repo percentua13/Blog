@@ -12,7 +12,7 @@
 
           <div class="wrapper">
             <div class="title">
-              <h1>Live blog with Ruby!!!!!!!!</h1>
+
             </div>
             <div class="posts " id="post_section">
               <% @posts.each do |post| %>
@@ -24,6 +24,13 @@
                       <div class="body-trunc">
                         <p><%= post.body %></p>
                         <p><%= time_ago_in_words(post.dateTime) + " ago"%></p>
+
+
+                        <p style="text-align: right;">by <%= post.author.name %></p>
+
+                        <% post.post2tags.each do |tag| %>
+                          <a href="<%='/posts/tag/'+tag.tag_id.to_s[1..tag.tag_id.to_s.size]%>"><%=tag.tag_id%></a>
+                        <%end %>
                       </div>
                   </div>
                     </div>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root :to => 'home#index'
+  get 'posts/tag/:id', to: 'post#find_by_tag'
+  get 'posts/tag/', to: 'post#find_by_tag'
+
+
 
 
   get 'account/find', to: 'account#find'

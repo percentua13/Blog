@@ -12,11 +12,38 @@
           <%= render "basic/header" %>
 
             <div class="wrapper">
-              <div class="title">
-                <h1>Home page</h1>
+              <div class="title" style="margin-bottom: 100px; margin-top: 30px;">
+                <h1>Child version of real instagram =)</h1>
               </div>
             </div>
+
+            <div style="margin-left: 5%;">
+                <div style="margin-bottom: 25px;"><h>To find user by his name - just properly write his name and click on search button =)</h></div>
+                <div style="margin-bottom: 25px;"><h>To find user by his username - just properly write his @username and click on search button =)</h></div>
+
+                <div>
+
+                  <div class="nav-item active" style="margin-right: 20px; margin-bottom: 60px;">
+                    <form class="form-inline my-2 my-lg-0" action="/account/find">
+                      <input class="form-control mr-sm-2" name="name" type="search" placeholder="Enter @username/name" aria-label="Search" >
+                      <button class="btn btn-outline-success my-1 my-sm-0" type="submit" >Search user</button>
+                    </form>
+                  </div>
+
+                  <div style="margin-bottom: 25px;"><h>To find all post by its tag - just properly write its tag and click on search button =)</h></div>
+                  <div class="nav-item active">
+                    <form class="form-inline my-2 my-lg-0" action="/posts/tag/">
+                      <input class="form-control mr-sm-2" name="tag" type="search" placeholder="Enter #tag" aria-label="Search" >
+                      <button class="btn btn-outline-success my-1 my-sm-0" type="submit" >Search posts</button>
+                    </form>
+                  </div>
+
+                </div>
+             </div>
+
       </div>
+
+
 
         <%= render "basic/footer" %>
     </div>
