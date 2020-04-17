@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<%= render "basic/header" %>
+
+
+<form method="POST" action="/account/updatesave" enctype="multipart/form-data" class="post-form">
+  <%= token_tag %>
+
+    <div class="container emp-profile">
+      <form method="post">
+
+          <div style="text-align: center; margin-bottom: 25px;"><strong>Fill fileds which you want to change</strong></div>
+
+          <div class="row">
+          <div class="col-md-10">
+            <div class="tab-content profile-tab" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4">
+                    <label>Photo</label>
+                  </div>
+                  <div class="profile-img col-md-8">
+                    <input type="file" name="media" class="form-control media-upload">
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4">
+                    <label>Name</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" name="name" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4">
+                    <label>Surname</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" name="surname" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4">
+                    <label>Password</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" name="password" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4">
+                    <label>Bio</label>
+                  </div>
+                  <div class="col-md-8">
+                    <textarea name="about" class="form-control" cols="25" rows="10"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="from-group" style="width: 100%; text-align:center;">
+          <div><input type="submit" value="Create User"></div>
+        </div>
+
+
+      </form>
+    </div>
+
+
+
+<%= render "basic/footer" %>
+</body>
+
+</html>

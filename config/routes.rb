@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
-  get 'account/info', to: 'account#info'
+
+  get 'account/update/:id', to: 'account#update'
+  get 'account/info/:id', to: 'account#info'
+  post 'account/updatesave', to: 'account#updatesave'
+
   get 'post/myposts'
   get 'post/create', to: 'post#create'
   get 'post/:id', to: 'post#currentpost'
