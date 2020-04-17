@@ -2,21 +2,23 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
+  get 'account/info', to: 'account#info'
   get 'post/myposts'
+  get 'post/create', to: 'post#create'
+  get 'post/:id', to: 'post#currentpost'
+  post '/comment/store/:id', to: 'comment#store'
+
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
   get 'account/create'
   get 'account/store'
-  get 'post/create'
-  get 'post/store'
-  #get 'first/HelloWorld'
-  #get 'try/tryA'
-  #get 'info/hello'
-  #get 'hello/init'
+
+
   get 'home/index'
-  get 'post/create'
+
   post 'post/store'
+
 
   get 'account/create'
   post 'account/store'
