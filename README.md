@@ -1,24 +1,5 @@
 # README
+1. Open HELP(LOOK AT ME) folder to see how site works 
+2. Database is not local  (using console.aiven.io, avaliable for 1 month) db is postgres
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
