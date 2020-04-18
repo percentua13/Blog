@@ -1,10 +1,12 @@
+require 'bcrypt'
 class AccountController < ApplicationController
   def create
   end
 
   def store
     default_avatar_url = "https://res.cloudinary.com/doxgbchiu/image/upload/v1587117423/78-785878_batman-icon-batman-avatar-icon-hd-png-download_xlej1p.png"
-    @user = Author.new(:name => params[:name], :surname => params[:surname], :username => "@"+params[:username], :email => params[:email], :password => params[:password], :about => params[:about], :media => default_avatar_url)
+
+    @user = Author.new(:name => params[:name], :surname => params[:surname], :username => "@"+params[:username], :email => params[:email], :password_ => params[:password], :about => params[:about], :media => default_avatar_url)
 
     @user.save
 

@@ -1,10 +1,11 @@
+require 'bcrypt'
 class SessionsController < ApplicationController
   def new
   end
   def create
     user = Author.find_by(email: params[:email])
 
-    if user && user.password == params[:password]
+    if user && user.password_ == params[:password]
       session[:user_id] = user.id
       session[:user_name] = user.name
       redirect_to('/account/info/'+session[:user_id].to_s)
