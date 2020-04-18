@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+rails destroy model  id: 1
+rails destroy model  name: MyString
+rails destroy model  surname: MyString
+rails destroy model  username: MyString
+rails destroy model  email: MyString
+rails destroy model  password: MyString
+rails destroy model  media: MyText
+rails destroy model  about: MyText
+
+two:
+rails destroy model  id: 1
+rails destroy model  name: MyString
+rails destroy model  surname: MyString
+rails destroy model  username: MyString
+rails destroy model  email: MyString
+rails destroy model  password: MyString
+rails destroy model  media: MyText
+rails destroy model  about: MyText

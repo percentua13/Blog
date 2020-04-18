@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+    <div id="page-container">
+      <div id="content-wrap">
+          <%= render "basic/header" %>
+
+          <div class="wrapper">
+            <div class="title">
+
+            </div>
+            <div class="posts " id="post_section">
+              <% @posts.each do |post| %>
+                <div class="card" style="width: 25rem; margin-bottom: 25px;">
+                  <div class="card-body">
+                      <a href="<%= '/post/'+post.id.to_s %>" target="_blank">
+                         <img class="card-img-top" style="width: 100%; height: 300pt;" src="<%= post.media %>">
+                      </a>
+                      <div class="body-trunc">
+                        <p><%= post.body %></p>
+                        <p><%= time_ago_in_words(post.dateTime) + " ago"%></p>
+
+
+                        <p style="text-align: right;">by <%= post.author.name %></p>
+
+                        <% post.post2tags.each do |tag| %>
+                          <a href="<%='/posts/tag/'+tag.tag_id.to_s[1..tag.tag_id.to_s.size]%>"><%=tag.tag_id%></a>
+                        <%end %>
+                      </div>
+                  </div>
+                    </div>
+                <% end %>
+            </div>
+          </div>
+      </div>
+      <%= render "basic/footer" %>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+    <div id="page-container">
+        <div id="content-wrap">
+            <%= render "basic/header" %>
+
+
+
+          <div class="title">
+            <h1>Sign In</h1>
+          </div>
+
+
+
+            <p id="alert"><%= alert %></p><%= form_tag sessions_path do |form| %>
+
+                <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-md-4"></div>
+
+                  <div class="col-md-2">
+                    <%= label_tag :email %>
+                  </div>
+                  <div class="col-md-2">
+                    <%= text_field_tag :email %>
+                  </div>
+                </div>
+
+            <div class="row" style="margin-bottom: 25px;">
+              <div class="col-md-4"></div>
+              <div class="col-md-2">
+                <%= label_tag :password %>
+              </div>
+              <div class="col-md-2">
+                <%= password_field_tag :password %>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 25px;">
+              <div class="col-md-6"></div>
+              <div class="col-md-2">
+                <div class="actions">
+                  <%= submit_tag "Login" %>
+                </div>
+            </div>
+           </div>
+
+          <% end %>
+
+        </div>
+        <%= render "basic/footer" %>
+    </div>
+</body>
+
+</html>

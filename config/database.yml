@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: 'avnadmin'
+  port: 12927
+  password: 'efjfl5g1e2lxkxhb'
+  host: 'pg-16ace163-seliverstovalers-0f61.aivencloud.com'
+
+development:
+  <<: *default
+  database: defaultdb
+
+test:
+  <<: *default
+  database: 'defaultdb'
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: 'pg-16ace163-seliverstovalers-0f61.aivencloud.com'
