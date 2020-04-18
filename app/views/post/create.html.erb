@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+    <div id="page-container">
+      <div id="content-wrap">
+          <%= render "basic/header" %>
+
+          <div class="title">
+            <h1>Create post</h1>
+          </div>
+
+          <div style="text-align:center">
+            <p><strong>Fill and submit the form below to create a new post</strong></p>
+
+            <form method="POST" action="/post/store" enctype="multipart/form-data" class="post-form">
+              <%= token_tag %>
+
+
+              <div class="form-group">
+                <label for="media"></label>
+                <input type="file" name="media" class="form-control media-upload">
+              </div>
+
+              <div class="form-group">
+                <label for="body"></label>
+                <textarea name="body" class="form-control" cols="20" rows="10" style="resize: none;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="title">Tags</label>
+                <input type="text" name="tags" class="form-control">
+              </div>
+
+
+              <div class="from-group">
+                <div><input type="submit" value="Create Post"></div>
+              </div>
+            </form>
+
+          </div>
+      </div>
+
+      <%= render "basic/footer" %>
+    </div>
+
+</body>
+
+</html>
