@@ -1,0 +1,42 @@
+rails generate model author id:integer name:string surname:string username:string email:string password:string  media:text about:text
+rails generate model post id:integer  body:text media:text dateTime:datetime  author:references
+rails generate model comment id:integer body:text dateTime:datetime author:references post:references
+
+rails generate model tag id:string
+
+rails generate model post2tag tag:references post:references
+      t.references :tag, type: :string, null: false, foreign_key: true
+
+ t.string :id, null: false
+
+
+!!!!
+rake db:migrate
+!!!
+{Migrations :  create_table :comments do |t| =>  create_table :comments, id: false do |t|  }
+ has_many :books
+???{t.integer :id => t.primary_key :id}
+{      t.references :tag, type: :string, null: false, foreign_key: true}
+
+
+      t.string :id, primary_key: true
+
+
+rails destroy model ModelName
+rails db:migrate
+rails d migration test01
+
+
+rails generate migration migration_name
+    add_foreign_key :post, :author
+    add_foreign_key :comment, :author
+    add_foreign_key :comment, :post
+
+ add_foreign_key :post, 
+		 :author, 
+                 column: :author_id
+
+---------------------------------------
+views/basic/_header.html.erb
+
+<%= render "basic/header" %>
