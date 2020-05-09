@@ -3,9 +3,9 @@ default: &default
   encoding: unicode
   pool: 5
   username: 'avnadmin'
-  port: 12927
-  password: 'efjfl5g1e2lxkxhb'
-  host: 'pg-16ace163-seliverstovalers-0f61.aivencloud.com'
+  port: 22826
+  password: 'rp6nrxm0urbtn38k'
+  host: 'pg-1ed19a14-lpnu-6077.aivencloud.com'
 
 development:
   <<: *default
@@ -19,4 +19,4 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  url: 'pg-16ace163-seliverstovalers-0f61.aivencloud.com'
+  url: 'pg-1ed19a14-lpnu-6077.aivencloud.com'
