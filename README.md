@@ -75,11 +75,17 @@
         2.2.2 click on "Create comment" button
         2.2.3 !!! To leave comment you need to sign in !!!
 
-
+## Users (try these accounts for testing) :
+	1. string1@gmail.com string123
+	2. string2@gmail.com string123
+	3. string3@gmail.com string123
+	4. string4@gmail.com string123
+	4. string5@gmail.com string123
  
 ## Database (PostgreSQL) 
 	
 	1. Database is not local  (using console.aiven.io, avaliable for 1 month 09.05.2019-09.06.2019)
+
 
 
 #### Use with pleasure c:  
